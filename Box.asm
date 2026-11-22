@@ -1,0 +1,35 @@
+(LOOP)
+    @color
+    M=0
+    @KBD
+    D=M
+    @SKIP
+    D;JEQ
+    @color
+    M=-1
+(SKIP)
+    @18688
+    D=A
+    @addr
+    M=D
+    @20
+    D=A
+    @i
+    M=D
+(DRAW)
+    @color
+    D=M
+    @addr
+    A=M
+    M=D
+    @32
+    D=A
+    @addr
+    M=D+M
+    @i
+    M=M-1
+    D=M
+    @DRAW
+    D;JGT
+    @LOOP
+    0;JMP
